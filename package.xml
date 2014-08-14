@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<package name="be.bastelstu.max.wcf.pushNotification" xmlns="http://www.woltlab.com" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.woltlab.com http://www.woltlab.com/XSD/maelstrom/package.xsd">
+	<packageinformation>
+		<packagename language="de"><![CDATA[nodePush-Benachrichtigungen]]></packagename>
+		<packagename language="en"><![CDATA[nodePush notifications]]></packagename>
+		<packagedescription language="de"><![CDATA[Zeigt ein Benachrichtigungs-Pop-Up beim Erhalt neuer Benachrichtigungen an.]]></packagedescription>
+		<packagedescription language="en"><![CDATA[Shows a notification pop-up when receiving new notifications.]]></packagedescription>
+		<version>1.0.0</version>
+		<date>2014-08-14</date>
+	</packageinformation>
+	
+	<authorinformation>
+		<author><![CDATA[Maximilian Mader]]></author>
+		<authorurl><![CDATA[http://tims.bastelstu.be]]></authorurl>
+	</authorinformation>
+	
+	<requiredpackages>
+		<requiredpackage minversion="2.0.0">com.woltlab.wcf</requiredpackage>
+	</requiredpackages>
+	
+	<excludedpackages>
+		<excludedpackage version="2.1.0">com.woltlab.wcf</excludedpackage>
+	</excludedpackages>
+	
+	<instructions type="install">
+		<instruction type="language">language/*.xml</instruction>
+		<instruction type="file">file.tar</instruction>
+		<instruction type="eventListener">eventListener.xml</instruction>
+		<instruction type="templateListener">templateListener.xml</instruction>
+	</instructions>
+	
+	<instructions type="update" fromversion="*">
+		<instruction type="language">language/*.xml</instruction>
+		<instruction type="file">file.tar</instruction>
+		<instruction type="eventListener">eventListener.xml</instruction>
+		<instruction type="templateListener">templateListener.xml</instruction>
+	</instructions>
+</package>

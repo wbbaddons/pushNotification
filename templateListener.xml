@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<data xmlns="http://www.woltlab.com" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.woltlab.com http://www.woltlab.com/XSD/templateListener.xsd">
+	<import>
+		<templatelistener name="userNotificationNodePushListener">
+			<environment>user</environment>
+			<templatename>headInclude</templatename>
+			<eventname>javascriptInit</eventname>
+			<templatecode><![CDATA[{if $__wcf->user->userID}
+(function() {
+	var notification = new WCF.System.Notification('{lang}wcf.user.notification.new{/lang}', 'info');
+	
+	be.bastelstu.wcf.nodePush.onMessage('be.bastelstu.max.wcf.user.newNotification', function() {
+		// You have mail!
+		notification.show(null, 10e3);
+	});
+})();{/if}]]></templatecode>
+		</templatelistener>
+	</import>
+</data>

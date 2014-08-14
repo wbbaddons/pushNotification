@@ -25,7 +25,7 @@ EOT;
 	}
 	if (file_exists('file.tar')) unlink('file.tar');
 	if (file_exists('acptemplates.tar')) unlink('acptemplates.tars');
-	if (file_exists('be.bastelstu.max.pushNotification')) unlink('be.bastelstu.max.pushNotification');
+	if (file_exists('be.bastelstu.max.pushNotification.tar')) unlink('be.bastelstu.max.pushNotification.tar');
 echo <<<EOT
 
 Checking PHP for Syntax Errors
@@ -43,8 +43,9 @@ EOT;
 			
 			return;
 		}
-		$file = glob($folder.'/*');
-		foreach ($file as $file) {
+		
+		$files = glob($folder.'/*');
+		foreach ($files as $file) {
 			$check($file);
 		}
 	};
@@ -59,13 +60,13 @@ EOT;
 	if ($code != 0) exit($code);
 echo <<<EOT
 
-Building acptemplates.tar
+Building acptemplate.tar
 -------------------------
 
 EOT;
-	if (is_dir('../acptemplates')) {
-		chdir('../acptemplates');
-		passthru('tar cvf ../acptemplates.tar *', $code);
+	if (is_dir('../acptemplate')) {
+		chdir('../acptemplate');
+		passthru('tar cvf ../acptemplate.tar *', $code);
 		if ($code != 0) exit($code);
 	}
 	else {
@@ -89,4 +90,4 @@ EOT;
 	if ($code != 0) exit($code);
 
 if (file_exists('file.tar')) unlink('file.tar');
-if (file_exists('acptemplates.tar')) unlink('acptemplates.tar');
+if (file_exists('acptemplate.tar')) unlink('acptemplate.tar');

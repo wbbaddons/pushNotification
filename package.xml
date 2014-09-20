@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <package name="be.bastelstu.max.wcf.pushNotification" xmlns="http://www.woltlab.com" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.woltlab.com http://www.woltlab.com/XSD/maelstrom/package.xsd">
 	<packageinformation>
-		<packagename language="de"><![CDATA[nodePush-Benachrichtigungen]]></packagename>
-		<packagename language="en"><![CDATA[nodePush notifications]]></packagename>
+		<packagename language="de"><![CDATA[Push-Benachrichtigungen]]></packagename>
+		<packagename language="en"><![CDATA[Push notifications]]></packagename>
 		<packagedescription language="de"><![CDATA[Zeigt ein Benachrichtigungs-Pop-Up beim Erhalt neuer Benachrichtigungen an.]]></packagedescription>
 		<packagedescription language="en"><![CDATA[Shows a notification pop-up when receiving new notifications.]]></packagedescription>
-		<version>1.0.0</version>
-		<date>2014-08-14</date>
+		<version>1.1.0</version>
+		<date>2014-09-20</date>
 	</packageinformation>
 	
 	<authorinformation>

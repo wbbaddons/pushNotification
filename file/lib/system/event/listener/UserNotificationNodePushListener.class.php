@@ -25,6 +25,6 @@ class UserNotificationNodePushListener implements IEventListener {
 			return $user->userID;
 		}, $parameters['recipients']);
 		
-		\wcf\system\nodePush\NodePushHandler::getInstance()->sendMessage('be.bastelstu.max.wcf.user.newNotification', $recipients);
+		\wcf\system\push\PushHandler::getInstance()->sendMessage('be.bastelstu.max.wcf.user.newNotification', $recipients);
 	}
 }

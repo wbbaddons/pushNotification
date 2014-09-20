@@ -9,7 +9,7 @@
 (function() {
 	var notification = new WCF.System.Notification('{lang}wcf.user.notification.new{/lang}', 'info');
 	
-	be.bastelstu.wcf.nodePush.onMessage('be.bastelstu.max.wcf.user.newNotification', function() {
+	be.bastelstu.wcf.push.onMessage('be.bastelstu.max.wcf.user.newNotification', function() {
 		// You have mail!
 		notification.show(null, 10e3);
 	});

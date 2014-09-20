@@ -2,7 +2,7 @@
 <?php
 namespace de\bisaboard\bisaboard;
 /**
- * Builds be.bastelstu.max.pushNotification
+ * Builds be.bastelstu.max.wcf.pushNotification
  *
  * @author Tim Düsterhus, edited by Maximilian Mader
  * @copyright 2012-2013 Tim Düsterhus
@@ -11,8 +11,8 @@ namespace de\bisaboard\bisaboard;
  */
 $packageXML = file_get_contents('package.xml');
 preg_match('/<version>(.*?)<\/version>/', $packageXML, $matches);
-echo "Building be.bastelstu.max.pushNotification $matches[1]\n";
-echo str_repeat("=", strlen("Building be.bastelstu.max.pushNotification $matches[1]"))."\n";
+echo "Building be.bastelstu.max.wcf.pushNotification $matches[1]\n";
+echo str_repeat("=", strlen("Building be.bastelstu.max.wcf.pushNotification $matches[1]"))."\n";
 
 echo <<<EOT
 Cleaning up
@@ -25,7 +25,7 @@ EOT;
 	}
 	if (file_exists('file.tar')) unlink('file.tar');
 	if (file_exists('acptemplates.tar')) unlink('acptemplates.tars');
-	if (file_exists('be.bastelstu.max.pushNotification.tar')) unlink('be.bastelstu.max.pushNotification.tar');
+	if (file_exists('be.bastelstu.max.wcf.pushNotification.tar')) unlink('be.bastelstu.max.wcf.pushNotification.tar');
 echo <<<EOT
 
 Checking PHP for Syntax Errors
@@ -75,14 +75,14 @@ EOT;
 
 echo <<<EOT
 
-Building be.bastelstu.max.pushNotification
+Building be.bastelstu.max.wcf.pushNotification
 ------------------------------------------
 
 EOT;
 	chdir('..');
 	file_put_contents('package.xml.old', file_get_contents('package.xml'));
 	file_put_contents('package.xml', preg_replace('~<date>\d{4}-\d{2}-\d{2}</date>~', '<date>'.date('Y-m-d').'</date>', file_get_contents('package.xml')));
-	passthru('tar cvf be.bastelstu.max.pushNotification.tar --exclude=*.old --exclude=file --exclude=contrib -- *', $code);
+	passthru('tar cvf be.bastelstu.max.wcf.pushNotification.tar --exclude=*.old --exclude=file --exclude=contrib -- *', $code);
 	if (file_exists('package.xml.old')) {
 		file_put_contents('package.xml', file_get_contents('package.xml.old'));
 		unlink('package.xml.old');

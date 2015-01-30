@@ -17,7 +17,7 @@ class UserNotificationNodePushListener implements IEventListener {
 	 * @see	\wcf\system\event\IEventListener::execute()
 	 */
 	public function execute($eventObj, $className, $eventName) {
-		if ($eventObj->getActionName() !== 'addRecipients') return;
+		if ($eventObj->getActionName() !== 'addRecipients' && $eventObj->getActionName() !== 'createStackable' && $eventObj->getActionName() !== 'createDefault') return;
 		
 		$parameters = $eventObj->getParameters();
 		

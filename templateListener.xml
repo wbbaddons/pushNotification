@@ -11,7 +11,25 @@
 	
 	be.bastelstu.wcf.push.onMessage('be.bastelstu.max.wcf.user.newNotification', function() {
 		// You have mail!
-		notification.show(null, 10e3);
+		notification.show(null, 5e3);
+		
+		// Load WCF notifications and fire the corresponding callback
+		// See WCF.System.KeepAlive <https://github.com/WoltLab/WCF/blob/3a80c04c92fab9dcc84d520717ed72fd1ef0a4ff/wcfsetup/install/files/js/WCF.js#L8219>
+		if (typeof WCF.System.PushNotification !== 'undefined') {
+			new WCF.Action.Proxy({
+				autoSend: true,
+				data: {
+					actionName: 'keepAlive',
+					className: 'wcf\\data\\session\\SessionAction'
+				},
+				failure: function() { },
+				showLoadingOverlay: false,
+				success: function(data) {
+					WCF.System.PushNotification.executeCallbacks(data);
+				},
+				suppressErrors: true
+			});
+		}
 	});
 })();{/if}]]></templatecode>
 		</templatelistener>

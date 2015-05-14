@@ -23,7 +23,7 @@
 					autoSend: true,
 					data: {
 						actionName: 'keepAlive',
-						className: 'wcf\\data\\session\\SessionAction'
+						className: 'wcf\\data\\session\\PushNotificationSessionAction'
 					},
 					failure: function() { },
 					showLoadingOverlay: false,

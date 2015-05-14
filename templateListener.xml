@@ -8,11 +8,13 @@
 			<templatecode><![CDATA[{if $__wcf->user->userID}
 (function($, window) {
 	$(function() {
-		var notification = new WCF.System.Notification('{lang}wcf.user.notification.new{/lang}', 'info');
+		{if SHOW_NOTIFICATION_NOTICE}
+			var notification = new WCF.System.Notification('{lang}wcf.user.notification.new{/lang}', 'info');
+		{/if}
 		
 		be.bastelstu.wcf.push.onMessage('be.bastelstu.max.wcf.user.newNotification', function() {
 			// You have mail!
-			notification.show(null, 5e3);
+			{if SHOW_NOTIFICATION_NOTICE}notification.show(null, 5e3);{/if}
 			
 			// Load WCF notifications and fire the corresponding callback
 			// See WCF.System.KeepAlive <https://github.com/WoltLab/WCF/blob/3a80c04c92fab9dcc84d520717ed72fd1ef0a4ff/wcfsetup/install/files/js/WCF.js#L8219>

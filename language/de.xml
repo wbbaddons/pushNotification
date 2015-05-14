@@ -3,4 +3,8 @@
 	<category name="wcf.user.notification">
 		<item name="wcf.user.notification.new"><![CDATA[Sie haben eine neue Benachrichtigung erhalten.]]></item>
 	</category>
+
+	<category name="wcf.acp.option">
+		<item name="wcf.acp.option.show_notification_notice"><![CDATA[Hinweis bei neuen Benachrichtigungen anzeigen]]></item>
+	</category>
 </language>

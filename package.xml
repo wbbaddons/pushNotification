@@ -25,6 +25,7 @@
 		<instruction type="file">file.tar</instruction>
 		<instruction type="eventListener">eventListener.xml</instruction>
 		<instruction type="templateListener">templateListener.xml</instruction>
+		<instruction type="option">option.xml</instruction>
 	</instructions>
 	
 	<instructions type="update" fromversion="*">
@@ -32,5 +33,6 @@
 		<instruction type="file">file.tar</instruction>
 		<instruction type="eventListener">eventListener.xml</instruction>
 		<instruction type="templateListener">templateListener.xml</instruction>
+		<instruction type="option">option.xml</instruction>
 	</instructions>
 </package>

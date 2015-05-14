@@ -3,4 +3,8 @@
 	<category name="wcf.user.notification">
 		<item name="wcf.user.notification.new"><![CDATA[You have received a new notification.]]></item>
 	</category>
+
+	<category name="wcf.acp.option">
+		<item name="wcf.acp.option.show_notification_notice"><![CDATA[Show notice on new notification]]></item>
+	</category>
 </language>

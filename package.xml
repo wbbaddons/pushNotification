@@ -5,7 +5,7 @@
 		<packagename language="en"><![CDATA[Push notifications]]></packagename>
 		<packagedescription language="de"><![CDATA[Zeigt ein Benachrichtigungs-Pop-Up beim Erhalt neuer Benachrichtigungen an.]]></packagedescription>
 		<packagedescription language="en"><![CDATA[Shows a notification pop-up when receiving new notifications.]]></packagedescription>
-		<version>2.0.0</version>
+		<version>2.0.1</version>
 		<date>2018-02-21</date>
 		<license><![CDATA[WTFPL <http://www.wtfpl.net/txt/copying/>]]></license>
 	</packageinformation>
@@ -28,6 +28,15 @@
 	<instructions type="install">
 		<instruction type="language">language/*.xml</instruction>
 		<instruction type="file" />
+		<instruction type="file" application="wcf">files_wcf.tar</instruction>
+		<instruction type="eventListener" />
+		<instruction type="templateListener" />
+	</instructions>
+	
+	<instructions type="update" fromversion="2.0.0">
+		<instruction type="language">language/*.xml</instruction>
+		<instruction type="file" />
+		<instruction type="file" application="wcf">files_wcf.tar</instruction>
 		<instruction type="eventListener" />
 		<instruction type="templateListener" />
 	</instructions>

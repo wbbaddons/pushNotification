@@ -6,36 +6,14 @@
 			<templatename>headInclude</templatename>
 			<eventname>javascriptInit</eventname>
 			<templatecode><![CDATA[{if $__wcf->user->userID}
-(function($, window) {
-	$(function() {
-		{if SHOW_NOTIFICATION_NOTICE}
-			var notification = new WCF.System.Notification('{lang}wcf.user.notification.new{/lang}', 'info');
-		{/if}
-		
-		be.bastelstu.wcf.push.onMessage('be.bastelstu.max.wcf.user.newNotification', function() {
-			// You have mail!
-			{if SHOW_NOTIFICATION_NOTICE}notification.show(null, 5e3);{/if}
-			
-			// Load WCF notifications and fire the corresponding callback
-			// See WCF.System.KeepAlive <https://github.com/WoltLab/WCF/blob/3a80c04c92fab9dcc84d520717ed72fd1ef0a4ff/wcfsetup/install/files/js/WCF.js#L8219>
-			if (typeof WCF.System.PushNotification !== 'undefined') {
-				new WCF.Action.Proxy({
-					autoSend: true,
-					data: {
-						actionName: 'keepAlive',
-						className: 'wcf\\data\\session\\SessionAction'
-					},
-					failure: function() { },
-					showLoadingOverlay: false,
-					success: function(data) {
-						WCF.System.PushNotification.executeCallbacks(data);
-					},
-					suppressErrors: true
-				});
-			}
-		});
+require([ 'Bastelstu.be/Push/Notification', 'WoltLabSuite/Core/Language' ], function (Notification, Language) {
+	Language.addObject({
+		'wcf.user.notification.new': '{lang __literal=true}wcf.user.notification.new{/lang}'
 	});
-})(jQuery, window);{/if}]]></templatecode>
+
+	new Notification()
+});
+{/if}]]></templatecode>
 		</templatelistener>
 	</import>
 </data>

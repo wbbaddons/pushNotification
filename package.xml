@@ -5,8 +5,8 @@
 		<packagename language="en"><![CDATA[Push notifications]]></packagename>
 		<packagedescription language="de"><![CDATA[Zeigt ein Benachrichtigungs-Pop-Up beim Erhalt neuer Benachrichtigungen an.]]></packagedescription>
 		<packagedescription language="en"><![CDATA[Shows a notification pop-up when receiving new notifications.]]></packagedescription>
-		<version>2.0.1</version>
-		<date>2018-02-21</date>
+		<version>2.1.0</version>
+		<date>2021-03-17</date>
 		<license><![CDATA[WTFPL <http://www.wtfpl.net/txt/copying/>]]></license>
 	</packageinformation>
 	
@@ -16,14 +16,9 @@
 	</authorinformation>
 	
 	<requiredpackages>
-		<requiredpackage minversion="3.0.0">com.woltlab.wcf</requiredpackage>
+		<requiredpackage minversion="5.3.5">com.woltlab.wcf</requiredpackage>
 		<requiredpackage minversion="2.1.0 Alpha 1">be.bastelstu.wcf.push</requiredpackage>
 	</requiredpackages>
-	
-	<compatibility>
-		<api version="2017" />
-		<api version="2018" />
-	</compatibility>
 	
 	<instructions type="install">
 		<instruction type="language">language/*.xml</instruction>
@@ -33,7 +28,7 @@
 		<instruction type="templateListener" />
 	</instructions>
 	
-	<instructions type="update" fromversion="2.0.0">
+	<instructions type="update" fromversion="2.0.*">
 		<instruction type="language">language/*.xml</instruction>
 		<instruction type="file" />
 		<instruction type="file" application="wcf">files_wcf.tar</instruction>
